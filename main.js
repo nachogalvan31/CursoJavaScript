@@ -1,4 +1,7 @@
-/* sectores */
+/* buenas no pude crear funciones creadas por mi por falta de tiempo y de practica, dejo la idea del trabajo que creo que cumple con su proposito, en el tercer prompt mi idea seria si 
+toca en cancelar o que se cancele el pedido o que regrese para atras, no pude hacerlo y por ende toques lo que toques te va a obligar a poner un numero de los solicitados, tambien 
+optaria por mostrar un mejor menu con los precios pero bueno, pude hacerlo de esa manera, la idea seria mejorarlo mucho mas y simplificarlo pero por cuestiones de tiempo pude presentar
+esto */
 
 const Tsivori = [ "Sivori", 9500, 18000, 13000];
 
