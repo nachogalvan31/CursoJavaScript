@@ -1,19 +1,59 @@
-/* buenas no pude crear funciones creadas por mi por falta de tiempo y de practica, dejo la idea del trabajo que creo que cumple con su proposito, en el tercer prompt mi idea seria si 
-toca en cancelar o que se cancele el pedido o que regrese para atras, no pude hacerlo y por ende toques lo que toques te va a obligar a poner un numero de los solicitados, tambien 
-optaria por mostrar un mejor menu con los precios pero bueno, pude hacerlo de esa manera, la idea seria mejorarlo mucho mas y simplificarlo pero por cuestiones de tiempo pude presentar
-esto */
+/*  */
 
-const Tsivori = [ "Sivori", 9500, 18000, 13000];
 
-const Tcentenario = ["Centenario", 9000, 17000, 12000];
+var array= ["a"]
 
-const Tquintero = ["Quintero", 18000, 28000, 21000];
+const opcion = document.querySelectorAll( ".Tribuna");
 
-const Tbelgrano = ["Belgrano", 20000, 30000, 23000];
+opcion.forEach(e => {
+    e.addEventListener("click", function(e){
+        const padre = e.target.parentNode;
+        padre.children[1].classList.toggle("animation");
+        padre.parentNode.children[1].classList.toggle("animation");
+    });
+})
 
-const Lugar = ["Tribuna", "Baja" ,"Media",  "Alta"];
+function obtenerValor(elemento) {
+    let valorSeleccionado = elemento.textContent;
+    document.getElementById('valorSeleccionado').textContent = valorSeleccionado;
+    console.log(valorSeleccionado);
+    array[0]=valorSeleccionado;
 
-const Tribunas = ["Sivori", "Centenario", "Quintero", "Belgrano"];
+    }
+    
+ 
+  function seleccionarOpcion(opcion) {
+    opcionSeleccionada = opcion; 
+    document.getElementById('opcionSeleccionada').textContent = opcionSeleccionada;
+    console.log(opcionSeleccionada)
+  }
+
+
+let tribunas = document.getElementById("Tribunasprecio")
+const Tribuna= [
+    {id: "Sivori", seccion: "Alta", precio: 9500},
+    {id: "Sivori", seccion: "Media", precio: 18000},
+    {id: "Sivori", seccion: "Baja", precio: 13000},
+    
+    {id: "Centenario", seccion: "Alta", precio: 9000},
+    {id: "Centenario", seccion: "Media", precio: 17000},
+    {id: "Centenario", seccion: "Baja", precio: 12000},
+
+    {id: "Quintero", seccion: "Alta", precio: 18000},
+    {id: "Quintero", seccion: "Media", precio: 28000},
+    {id: "Quintero", seccion: "Baja", precio: 21000},
+
+    {id: "Belgrano", seccion: "Alta", precio: 20000},
+    {id: "Belgrano", seccion: "Media", precio: 30000},
+    {id: "Belgrano", seccion: "Baja", precio: 23000},
+    ]
+    Tribuna.forEach((producto)=>{
+        let contenedor = document.createElement("div")
+        contenedor.className = "card"
+        contenedor.innerHTML = `<h3>${producto.id+ " " + producto.seccion+ " $" + producto.precio}<h3> `
+        tribunas.appendChild(contenedor);
+})
+console.log(array[0])
 
 let Totalentradas= 0;
 
@@ -27,7 +67,6 @@ let alerta3= 0;
 
 let cantidad= 0;
 
-let NomUsuario = prompt("Ingrese su nombre");
 
 function Cancelar(){
     alert ("Operacion cancelada")
@@ -37,69 +76,6 @@ function PrecioFinal (){
 }
 
 
-if (NomUsuario == null || NomUsuario == "") {
-    alert ("No ingreso ningún nombre");
-} else {
-    alert ("Bienvenido " + NomUsuario + " a continuacion la lista de precios " );
-        for(let i=0;i<Tribunas.length-1;i++){
-            alert (Tribunas[0]+ " "+Lugar[i+1] +" $"+Tsivori[i+1]+"\n"+Tribunas[1]+ " "+Lugar[i+1]+ " $"+Tcentenario[i+1]+ " "+"\n"+Tribunas[2]+ " "+Lugar[i+1]+ " $"+Tquintero[i+1]+ " "+"\n"+Tribunas[3]+ " "+Lugar[i+1]+ " $" +Tbelgrano[i+1])
-        }
-            while (alerta !== "Sivori" || alerta !== "Centenario" || alerta !== "Quintero" || alerta !== "Belgrano"){
-            let SectorSeleccionado= prompt ("Elija sector Sivori, Centenario, Quintero, Belgrano."+"\n"+ "Respetando las mayusculas."+"\n"+"Cancelar desestima la compra")
-            if (SectorSeleccionado == null){
-            Cancelar();
-            break
-                } else {
-                     alerta=SectorSeleccionado
-                     for ( let j = 0; j < Tribunas.length; j++)
-                    if (SectorSeleccionado == Tribunas[j]){
-                             while(alerta2 !== "1" || alerta2!== "2"|| alerta2!=="3"){    
-                             let  TribunaSeleccionada = prompt ("Escoja la tribuna a traves del numero correspondiente "+"\n"+"1=Baja"+"\n"+"2=Media"+"\n"+"3=Alta")     
-                              alerta2=TribunaSeleccionada
-                                if (SectorSeleccionado == Tsivori[0] ){
-                                        ValorFinal=Tsivori[TribunaSeleccionada];
-                                }
-                                if (SectorSeleccionado == Tcentenario[0]){
-
-                                    ValorFinal=Tcentenario[TribunaSeleccionada]
-                                }
-                                     
-                                if (SectorSeleccionado == Tquintero[0]) {
-                                    ValorFinal=Tquintero[TribunaSeleccionada]
-                                }           
-                                if (SectorSeleccionado == Tbelgrano[0]){
-                                    ValorFinal=Tbelgrano[TribunaSeleccionada]
-                                }
-                            if(alerta2 === "1" || alerta2=== "2"|| alerta2==="3"){
-                                break;
-                            }
-                            }
-                    } 
-                    if(alerta=== "Sivori" || alerta === "Centenario" || alerta === "Quintero" || alerta === "Belgrano"){
-                        break;
-                    } 
-                        }
-            
-                            }
-                                if (ValorFinal>0){
-                                    alert ("El precio de la entrada es de $" + ValorFinal);
-                                    const respuesta = confirm ("Desea continuar?")
-                                    if (respuesta){
-                                         while (alerta3 !== "1"||alerta3 !== "2" || alerta3 !== "3"|| alerta3 !== "4"){
-                                        let Totalentradas = prompt ("Seleccione numericamente el total de entradas maximo 4")
-                                        alerta3=Totalentradas 
-                                             if(alerta3=== "1"|| alerta3=== "2"|| alerta3=== "3"||alerta3==="4"){
-                                             cantidad=Totalentradas
-                                             break;
-                                            }       
-                                        }
-                                    alert ("El precio final es de $" + PrecioFinal()) 
-                                console.log (ValorFinal*cantidad)}
-                                    else {
-                                        Cancelar() }
-                                    }
-        }
-                                
                
      
 
