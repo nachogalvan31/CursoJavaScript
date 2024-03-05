@@ -4,13 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
-    <script src="main.js"></script>
+    <title>Entradas de cancha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Idea principal: Simulador entrada estadio</h1>
-    <p> La idea del simulador es presentar una pagina que venda entradas de un estadio, basandose en el lugar y variando el precio de cada lugar, la  
+
+    <h1>Precio Tribunas</h1>
+
+
+    <div id="Tribunasprecio">
+    </div>
+
+    <div class="cont-menu">
+        
+        <div class="cont-enlace">
+
+            <div class="Tribuna" onclick="obtenerValor(this)">
+                <p>Sivori </p>
+                <p class= "icono">  </p>
+            </div>
+
+            <div class="enlace">
+                <a href="#" onclick="seleccionarOpcion('Alta')"> Alta </a>
+                <a href="#" onclick="seleccionarOpcion('Media')"> Media</a>
+                <a href="#" onclick="seleccionarOpcion('Baja')"> Baja</a>
+            </div>
+        
+        </div>    
+        
+        <div class="cont-enlace">
+
+            <div class="Tribuna" onclick="obtenerValor(this)">
+                <p>Centenario </p>
+                <p class= "icono">  </p>
+            </div>
+
+            <div class="enlace">
+                <a href="#" onclick="seleccionarOpcion('Alta')"> Alta </a>
+                <a href="#" onclick="seleccionarOpcion('Media')"> Media</a>
+                <a href="#" onclick="seleccionarOpcion('Baja')"> Baja</a>
+            </div>
+        
+        </div>    
+
+        <div class="cont-enlace">
+
+            <div class="Tribuna" onclick="obtenerValor(this)">
+                <p>Quintero </p>
+                <p class= "icono">  </p>
+            </div>
+
+            <div class="enlace">
+                <a href="#" onclick="seleccionarOpcion('Alta')"> Alta </a>
+                <a href="#" onclick="seleccionarOpcion('Media')"> Media</a>
+                <a href="#" onclick="seleccionarOpcion('Baja')"> Baja</a>
+            </div>
+        
+        </div>    
+
+        <div class="cont-enlace">
+
+            <div class="Tribuna" onclick="obtenerValor(this)">
+                <p>Belgrano </p>
+                <p class= "icono">  </p>
+            </div>
+
+            <div class="enlace">
+                <a href="#" onclick="seleccionarOpcion('Alta')"> Alta </a>
+                <a href="#" onclick="seleccionarOpcion('Media')"> Media</a>
+                <a href="#" onclick="seleccionarOpcion('Baja')"> Baja</a>
+            </div>
+        
+        </div>    
+
+        <script src="main.js"></script>
+    <p> El valor es <span id="valorSeleccionado"> </span><p>
+        <p> El valor es <span id="opcionSeleccionada"> </span><p>
+        La idea del simulador es presentar una pagina que venda entradas de un estadio, basandose en el lugar y variando el precio de cada lugar, la  
         pagina interactuaria con el usuario dandole a elegir el lugar, precio y cantidad de entradas</p>
 
 </body>
