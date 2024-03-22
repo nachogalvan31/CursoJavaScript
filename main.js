@@ -1,34 +1,25 @@
 /*  */
 
-var contador = 0;
+let contador = 0;
 let final= 0;
-var contadorValido = false; 
+let contadorValido = false;
+let Tribuna= []; 
+let correosGuardados = JSON.parse(localStorage.getItem('correosUtilizados')) || [];
 
-let tribunas = document.getElementById("Tribunasprecio")
+const tribunas = document.getElementById("Tribunasprecio")
 
-const Tribuna= [
-    {id: "Sivori", seccion: "Alta", precio: 9500},
-    {id: "Sivori", seccion: "Media", precio: 18000},
-    {id: "Sivori", seccion: "Baja", precio: 13000},
-    
-    {id: "Centenario", seccion: "Alta", precio: 9000},
-    {id: "Centenario", seccion: "Media", precio: 17000},
-    {id: "Centenario", seccion: "Baja", precio: 12000},
-
-    {id: "Quintero", seccion: "Alta", precio: 18000},
-    {id: "Quintero", seccion: "Media", precio: 28000},
-    {id: "Quintero", seccion: "Baja", precio: 21000},
-
-    {id: "Belgrano", seccion: "Alta", precio: 20000},
-    {id: "Belgrano", seccion: "Media", precio: 30000},
-    {id: "Belgrano", seccion: "Baja", precio: 23000},
-    ]
-    Tribuna.forEach((producto)=>{
-        let contenedor = document.createElement("div")
+fetch("./data.json")
+.then(response => response.json())
+.then(data => {
+    data.forEach((producto)=>{
+        Tribuna= data;
+        const contenedor = document.createElement("div")
         contenedor.className = "card"
-        contenedor.innerHTML = `<h3>${producto.id+ " " + producto.seccion+ " $" + producto.precio}<h3> `
+        contenedor.innerHTML = `<h3 class="color">${producto.id+ " " + producto.seccion+ " $" + producto.precio}<h3> `
         tribunas.appendChild(contenedor);
-})
+        })
+    })
+   
 
 function mostrarSeleccion() {
     let seleccion1 = document.getElementById("menuTribuna").value;
@@ -79,7 +70,7 @@ function confirmarSeleccionFinal() {
 function crearMenu() {
     let contenedor = document.createElement("div");
 
-    // 1
+    // menu desplegable 1
     let selectMenu1 = document.createElement("label");
     selectMenu1.textContent = "Seleccione una Tribuna:  ";
     contenedor.appendChild(selectMenu1);
@@ -97,7 +88,7 @@ function crearMenu() {
     });
    
 
-    // 2
+    //menu desplegable 2
     let selectMenu2 = document.createElement("label");
     selectMenu2.textContent = "Selecciona un sector :";
     contenedor.appendChild(selectMenu2);
@@ -163,7 +154,6 @@ crearMenu();
  function multiplicar(){
     mostrarSeleccion()
     final= final*contador
-    console.log(final)
     document.getElementById("finalprecio").textContent = "Precio final= $" + final
 
 }
