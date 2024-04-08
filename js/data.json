@@ -1,0 +1,18 @@
+[
+    { "nombre": "Sivori Alta", "precio": 9500 },
+    { "nombre": "Sivori Media", "precio": 18000 },
+    { "nombre": "Sivori Baja", "precio": 13000 },
+    
+    { "nombre": "Centenario Alta", "precio": 9000 },
+    { "nombre": "Centenario Media", "precio": 17000 },
+    { "nombre": "Centenario Baja", "precio": 12000 },
+    
+    { "nombre": "Quintero Alta", "precio": 18000 },
+    { "nombre": "Quintero Media", "precio": 28000 },
+    { "nombre": "Quintero Baja", "precio": 21000 },
+    
+    { "nombre": "Belgrano Alta ", "precio": 20000 },
+    { "nombre": "Belgrano Media", "precio": 30000 },
+    { "nombre": "Belgrano Baja", "precio": 23000 }
+  ]
+  

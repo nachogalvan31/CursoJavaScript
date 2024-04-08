@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entradas de cancha</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/assets/style.css">
+  <title>Seleccionar Tribuna</title>
+  <script defer src="/js/main.js"></script><!-- script JS-->
+  <script defer src="/js/main2.js"></script><!-- script2 JS-->
 </head>
 
 <body>
-        <h1>Entradas River - Huracan 31/03</h1>
-        <div>
-            <img src="/assets/CanchaFinal.png" class="CanchaF">
-        </div>
-     <div id="Tribunasprecio">
-        <h2 id="mailsSeleccionados"></h2>  
-    <h2 id="resultado"></h2>
-    <h2 id="finalprecio"></h2>
-    <script src="main.js"></script>
-    <script src="main2.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-  
-   
+  <h1 id="titulo">Partido despedida Enzo Perez</h1>
+  <div id="recuadro-gigante"></div>
+  <img id="imagenLateral" src="assets/Cancha.png" alt="Imagen lateral">
+
+  <h2 id="subtitulo">Seleccione una Tribuna</h2>
+  <div id="contenedor"></div>
+  <button id="botonConfirmar">Confirmar Selección</button>
+  <div id="seleccionado" style="display: none;"></div>
+  <div id="botonesCantidad" style="display: none;">
+    <button id="restaEntrada">-</button>
+    <span id="cantidad">Cantidad de entradas: 1</span>
+    <button id="sumaEntrada">+</button>
+    <div id="total">Total: $0</div>
+    <div id="botonesContainer">
+        <button id="confirmarPrecio">Confirmar Precio Final</button>
+        <button id="atras">Atrás</button>
+      </div>
+  </div>
+  <h2 id="subtituloCorreo" style="display: none;">Ingrese mail de contacto para seguir con la reserva:</h2>
+  <input type="email" id="email" style="display: none;">
+  <button id="enviarCorreo" style="display: none;">Enviar</button>
+  <div id="tarjeta" style="display: none;">
+    <h2>Tarjeta de Confirmación</h2>
+    <div id="tribuna"></div>
+    <div id="cantidadTotal"></div>
+    <div id="emailContacto"></div>
+  </div>
+  <!-- Toastify JS-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>  
 </body>
 </html>
